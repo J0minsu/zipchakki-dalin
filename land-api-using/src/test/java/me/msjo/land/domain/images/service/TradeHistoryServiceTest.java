@@ -4,13 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import me.msjo.land.domain.images.dto.res.Items;
 import me.msjo.land.domain.images.dto.res.Root;
 import me.msjo.land.domain.images.webclient.LandWebClientService;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
-import reactor.core.publisher.Mono;
+
+import java.util.Map;
 
 @SpringBootTest
 @Transactional(readOnly = true)
@@ -21,23 +21,37 @@ class TradeHistoryServiceTest {
     @Autowired LandWebClientService landWebClientService;
     @Autowired ObjectMapper objectMapper;
 
+    int regionCode = 11110;
+    int size = 300;
+    int page = 1;
+    int year = 2013;
+    int month = 5;
 
     @Test
     void 부동산_매매_상세_조회() throws Exception {
 
-        int regionCode = 11470;
-        int size = 300;
-        int page = 1;
-        int year = 2013;
-        int month = 5;
         //given
-        Root root = landWebClientService.openapi(11215, size, page, year, month).block();
+        Root root = landWebClientService.apartmentTradeHistory(regionCode, size, page, year, month).block();
 
         Items items = root.getResponse().getBody().getItems();
 
         String result = objectMapper.writeValueAsString(items);
 
         System.out.println(result);
+
+        //when
+
+        //then
+
+    }
+
+    @Test
+    public void 아파트_월세_및_전세_내역_조회() throws Exception {
+
+        //given
+        Map result = landWebClientService.apartmentRentalHistory(regionCode, size, page, year, month).block();
+
+        System.out.println(objectMapper.writeValueAsString(result));
 
         //when
 
