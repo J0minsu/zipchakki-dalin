@@ -1,4 +1,4 @@
-package me.msjo.land.domain.images.entity;
+package me.msjo.land.domain.land.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

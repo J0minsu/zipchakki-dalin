@@ -1,4 +1,4 @@
-package me.msjo.land.domain.images.dto.res;
+package me.msjo.land.domain.land.dto.res;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

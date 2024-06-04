@@ -1,4 +1,4 @@
-package me.msjo.land.domain.images.entity;
+package me.msjo.land.domain.land.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -12,11 +12,14 @@ import org.hibernate.annotations.DynamicUpdate;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @DynamicUpdate
-public class Apartment {
+public class TradeHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "apartment_seq", nullable = false)
+    @Column(name = "trade_history_seq", nullable = false)
     Long seq;
+
+
+
 
 }

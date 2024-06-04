@@ -1,4 +1,4 @@
-package me.msjo.land.domain.images;
+package me.msjo.land.domain.land;
 
 import org.springframework.context.annotation.Configuration;
 

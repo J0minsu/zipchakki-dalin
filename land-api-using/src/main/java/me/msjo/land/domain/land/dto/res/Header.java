@@ -1,4 +1,4 @@
-package me.msjo.land.domain.images.dto.res;
+package me.msjo.land.domain.land.dto.res;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -10,9 +10,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Body{
-    Items items;
-    int numOfRows;
-    int pageNo;
-    int totalCount;
+public class Header{
+    String resultCode;
+    String resultMsg;
 }
