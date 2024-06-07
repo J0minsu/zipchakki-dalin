@@ -22,6 +22,11 @@
   - 어떤 범위의 질문들을 작성할 지 고민
 - 개발
   - 🏃🏼 필요 기능을 제공하기 위한 open api 리스트 조회 및 테스트
+    - ✓ 일부 허가가 나지 않는 api 제외 호출 테스트 완료
+      - 오피스텔 월세 및 전세 내역 조회
+      - 연립주택 월세 및 전세 내역 조회
+  - 🏃🏼 데이터 파악
+  - DB 설계
 - 시장조사
   - 동일 및 비슷한 서비스가 이미 존재하는지
  
@@ -43,8 +48,10 @@
 - 국토교통부_단독/다가구 매매 실거래 자료
   - https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15058022
 
-#### Documents
+### flow chart
+![](/doc_images/plan_1_flow_chart.png)
 
+#### Documents
 - 배경 지식
   - https://doczip.tistory.com/10
   - 표재부
