@@ -21,11 +21,11 @@ class TradeHistoryServiceTest {
     @Autowired LandWebClientService landWebClientService;
     @Autowired ObjectMapper objectMapper;
 
-    int regionCode = 11110;
+    int regionCode = 41131;
     int size = 300;
     int page = 1;
-    int year = 2013;
-    int month = 5;
+    int year = 2023;
+    int month = 1;
 
     @Test
     void 아파트_매매_상세_조회() throws Exception {

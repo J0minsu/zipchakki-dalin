@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,6 +26,7 @@ class DocumentWebClientServiceTest {
     @Autowired
     ObjectMapper objectMapper;
 
+    //mgmBldrgstPk -> 건물 자체의 키값
 
     int sigunguCd = 41131; //성남 수정구
     int bjdongCd = 10200; //태평동
@@ -31,10 +34,10 @@ class DocumentWebClientServiceTest {
 //    int bjdongCd = 10100; //효성동
     int platGbCd = 0;
 
-    //    int bun = 4527; //다가구
+        int bun = 4528; //다가구
 //    int bun = 7346; //아파트
 //    int bun = 5113; //오피스텔
-    int bun = 513; //다세대
+//    int bun = 513; //다세대
 //    int bun = 154; //인천 연립
 
 
@@ -52,6 +55,8 @@ class DocumentWebClientServiceTest {
         //given
         Map result = documentWebClientService.건축물대장_기본개요_조회(sigunguCd, bjdongCd, platGbCd, bun, ji, numOfRows, pageNo, null, null).block();
         //when
+//        result.entrySet().stream().collect(Collectors.toMap(i -> 기본개요_용어맵().get(i), Function.identity()));
+
         System.out.println(objectMapper.writeValueAsString(result));
         //then
 
